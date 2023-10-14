@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Letters */
+    --font: 'Poppins', sans-serif;
+    /* Colors */
+    --one:rgb(132, 132, 132);
+    --text:rgb(236, 236, 236);
+    --fondo:rgb(4, 3, 20);
+    --shadow:rgb(9, 9, 9);
+    /* No Variables */
+    --white:#fff;
+    --black:rgb(8, 8, 8);
+    --red:rgb(247, 17, 59);
+    /* Animation */
+    --btn-secundary:rgb(238, 238, 238);
+    --target:rgb(14, 14, 14);
+    --animation-colors: animateColor 8s linear infinite;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: var(--font);
+}
+
+body
+{
+    background-color: var(--fondo);
+    color: var(--text);
+   overflow-x: hidden;
+}
+
+
+.header{
+    position: absolute;
+    margin: 10px 10%;
+}
+
+/*Heart*/
+
+.heart{
+    height: 100px;
+    width: 100px;
+    background-color:var(--red) ;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: -10px 10px 130px var(--red);
+    animation: palpitar 0.6s linear infinite alternate;
+}
+
+.heart::before{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: var(--red);
+    right: 50%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 130px var(--red);
+}
+
+@keyframes palpitar {
+    0%{
+        transform: rotate(45deg) scale(1.10);
+    }
+    80%{
+        transform: rotate(45deg)scale(1.0);
+    }
+    100%{
+        transform:rotate(45deg) scale(0.8);
+    }
+}
+
+.heart::after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: var(--red);
+    top: -50%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 130px var(--red);
+}
+
